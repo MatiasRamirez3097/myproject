@@ -5,9 +5,9 @@ import {
     Badge, 
     Box, Container, CssBaseline, Divider, 
     Drawer as MuiDrawer, 
-    Grid, IconButton, Link, List, 
+    IconButton, List, 
     ListItem, ListItemIcon, ListItemText, 
-    Paper, Toolbar, Typography
+    Toolbar, Typography
 } from '@mui/material';
 import {
     ChevronLeft as ChevronLeftIcon, 
@@ -16,8 +16,8 @@ import {
     Person as PersonIcon,
     ShoppingCart as ShoppingCartIcon
 } from '@mui/icons-material';
-
-function Copyright(props) {
+import {Link} from 'react-router-dom'
+/*function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
@@ -28,7 +28,7 @@ function Copyright(props) {
       {'.'}
     </Typography>
   );
-}
+}*/
 
 const drawerWidth = 240;
 
@@ -142,24 +142,28 @@ const DashboardContent = ({children}) => {
                     </Toolbar>
                     <Divider />
                     <List>
-                        <ListItem>
-                            <ListItemIcon>
-                                <PersonIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Clientes" />
-                        </ListItem>
+                        <Link to="/clientes" style={{textDecoration: 'none', color:'white'}}>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <PersonIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Clientes" />
+                            </ListItem>
+                        </Link>
                         <ListItem>
                             <ListItemIcon>
                                 <ChevronLeftIcon />
                             </ListItemIcon>
                             <ListItemText primary="Compras" />
                         </ListItem>
-                        <ListItem>
-                            <ListItemIcon>
-                                <ShoppingCartIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Ventas" />
-                        </ListItem>    
+                        <Link to="/ventas" style={{textDecoration: 'none', color:'white'}}>
+                            <ListItem>
+                                <ListItemIcon>
+                                    <ShoppingCartIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Ventas" />
+                            </ListItem>
+                        </Link>
                     </List>
                 </Drawer>
             <Box
